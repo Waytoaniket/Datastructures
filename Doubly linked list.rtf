@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 struct node{
     struct node*prev;
@@ -8,7 +8,7 @@ struct node{
 
 void insert_beg(){
     int no;
-    printf("Enter no\n");
+    printf("Enter no ");
     scanf("%d",&no);
     t=(struct node*)malloc(sizeof(struct node));
     t->data=no;
@@ -24,9 +24,10 @@ void insert_beg(){
         start=t;
     }
 }
+
 void insert_end(){
     int no;
-    printf("Enter no\n");
+    printf("Enter no ");
     scanf("%d",&no);
     t=(struct node*)malloc(sizeof(struct node));
     t->data=no;
@@ -34,6 +35,7 @@ void insert_end(){
     if(start==NULL){
         t->prev=NULL;
         start=t;
+
     }
     else{
         p=start;
@@ -43,18 +45,20 @@ void insert_end(){
         t->prev=p;
         p->next=t;
     }
+
 }
+
  void insert_pos(){
     int no=0,n=0,flag=0;
     if(start==NULL)
     {
-        printf("List is empty!!\n");
+        printf("List is empty!!");
 
     }
     else{
-    printf("Enter no\n");
+    printf("Enter no ");
     scanf("%d",&no);
-    printf("Enter position\n");
+    printf("Enter position ");
     scanf("%d",&n);
     t=(struct node*)malloc(sizeof(struct node));
     t->data=no;
@@ -62,7 +66,7 @@ void insert_end(){
     for(int i=0;i<n-2;i++){
         if(p->next==NULL)
         {
-        printf("There are less elements!!\n");
+        printf("There are less elements!!");
         flag=1;
         break;
         }
@@ -111,13 +115,13 @@ void delete_pos(){
         printf("Linked list is empty\n");
     }
     else{
-        printf("Enter position\n");
+        printf("Enter position ");
         scanf("%d",&n);
         p=start;
         for(int i=0;i<n-2;i++){
             if(p->next==NULL)
             {
-            printf("There are less elements!!\n");
+            printf("There are less elements!!");
             flag=1;
             break;
         }
@@ -137,7 +141,7 @@ void display()
 {
     if(start==NULL)
     {
-        printf("List is empty!!\n");
+        printf("List is empty!!");
     }
     else
     {
@@ -155,7 +159,7 @@ void count()
 {
     if(start==NULL)
     {
-        printf("The length of the  Linked List is:0\n");
+        printf("The length of the  Linked List is:0");
     }
     else{
     p=start;
@@ -165,7 +169,7 @@ void count()
         p=p->next;
         len++;
     }
-    printf("The length of the  Linked List is:%d\n",len);
+    printf("The length of the  Linked List is:%d",len);
     }
 }
 
@@ -173,7 +177,7 @@ void reverse()
 {
     if(start==NULL)
     {
-        printf("List is empty!!\n");
+        printf("List is empty!!");
     }
     else
     {
@@ -196,7 +200,7 @@ int main()
     int ch;
     while(1)
     {
-        printf("\n\n---- Doubly Linked List(DLL) Menu ----\n");
+        printf("\n\n---- Doubly Linked List(DLL) Menu ----");
         printf("\n1.Insert\n2.Display\n3.Delete\n4.Count\n5.Reverse\n6.Exit\n\n");
         printf("Enter your choice(1-4):");
         scanf("%d",&ch);
@@ -206,7 +210,7 @@ int main()
             case 1:
                     printf("\n---- Insert Menu ----");
                     printf("\n1.Insert at beginning\n2.Insert at end\n3.Insert at specified position\n4.Exit");
-                    printf("\nEnter your choice(1-4):");
+                    printf("\n\nEnter your choice(1-4):");
                     scanf("%d",&ch);
 
                     switch(ch)
@@ -218,7 +222,7 @@ int main()
                         case 3: insert_pos();
                                 break;
                         case 4: exit(0);
-                        default: printf("\nWrong Choice!!");
+                        default: printf("Wrong Choice!!");
                     }
                     break;
 
@@ -227,7 +231,7 @@ int main()
 
             case 3: printf("\n---- Delete Menu ----");
                     printf("\n1.Delete from beginning\n2.Delete from end\n3.Delete from specified position\n4.Exit");
-                    printf("\nEnter your choice(1-4):");
+                    printf("\n\nEnter your choice(1-4):");
                     scanf("%d",&ch);
 
                     switch(ch)
@@ -252,5 +256,3 @@ int main()
     }
     return 0;
 }
-
-
