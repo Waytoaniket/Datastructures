@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 #include <stdlib.h>
 struct node{
     struct node*prev;
@@ -8,7 +8,7 @@ struct node{
 
 void insert_beg(){
     int no;
-    printf("Enter no");
+    printf("Enter no\n");
     scanf("%d",&no);
     t=(struct node*)malloc(sizeof(struct node));
     t->data=no;
@@ -26,7 +26,7 @@ void insert_beg(){
 }
 void insert_end(){
     int no;
-    printf("Enter no");
+    printf("Enter no\n");
     scanf("%d",&no);
     t=(struct node*)malloc(sizeof(struct node));
     t->data=no;
@@ -48,13 +48,13 @@ void insert_end(){
     int no=0,n=0,flag=0;
     if(start==NULL)
     {
-        printf("List is empty!!");
-       
+        printf("List is empty!!\n");
+
     }
     else{
-    printf("Enter no");
+    printf("Enter no\n");
     scanf("%d",&no);
-    printf("Enter position");
+    printf("Enter position\n");
     scanf("%d",&n);
     t=(struct node*)malloc(sizeof(struct node));
     t->data=no;
@@ -62,9 +62,9 @@ void insert_end(){
     for(int i=0;i<n-2;i++){
         if(p->next==NULL)
         {
-        printf("There are less elements!!");
+        printf("There are less elements!!\n");
         flag=1;
-        break;   
+        break;
         }
         p=p->next;
     }
@@ -74,13 +74,13 @@ void insert_end(){
         t->next=p->next;
         p->next->prev=t;
         p->next=t;
-    } 
+    }
     }
 }
 
 void delete_beg(){
     if(start==NULL){
-        printf("Linked list is emptyn");
+        printf("Linked list is empty\n");
     }
     else{
         p=start;
@@ -92,7 +92,7 @@ void delete_beg(){
 
 void delete_end(){
     if(start==NULL){
-        printf("Linked list is emptyn");
+        printf("Linked list is empty\n");
     }
     else{
         p=start;
@@ -108,25 +108,25 @@ void delete_end(){
 void delete_pos(){
     int n=0,flag=0;
     if(start==NULL){
-        printf("Linked list is emptyn");
+        printf("Linked list is empty\n");
     }
     else{
-        printf("Enter position");
+        printf("Enter position\n");
         scanf("%d",&n);
         p=start;
         for(int i=0;i<n-2;i++){
             if(p->next==NULL)
             {
-            printf("There are less elements!!");
+            printf("There are less elements!!\n");
             flag=1;
-            break;   
+            break;
         }
         p=p->next;
     }
      if(flag==0)
     {
         q=p->next;
-     p->next=q->next; 
+     p->next=q->next;
      q->next->prev=p;
         free(q);
     }
@@ -137,12 +137,12 @@ void display()
 {
     if(start==NULL)
     {
-        printf("List is empty!!");
+        printf("List is empty!!\n");
     }
     else
     {
         q=start;
-        printf("The linked list is:n");
+        printf("The linked list is:\n");
         while(q!=NULL)
         {
             printf("%d->",q->data);
@@ -155,7 +155,7 @@ void count()
 {
     if(start==NULL)
     {
-        printf("The length of the  Linked List is:0");
+        printf("The length of the  Linked List is:0\n");
     }
     else{
     p=start;
@@ -165,7 +165,7 @@ void count()
         p=p->next;
         len++;
     }
-    printf("The length of the  Linked List is:%d",len);
+    printf("The length of the  Linked List is:%d\n",len);
     }
 }
 
@@ -173,12 +173,12 @@ void reverse()
 {
     if(start==NULL)
     {
-        printf("List is empty!!");
+        printf("List is empty!!\n");
     }
     else
     {
         q=start;
-        printf("The linked list is:n");
+        printf("The linked list is:\n");
         while(q->next!=NULL)
         {
             q=q->next;
@@ -196,17 +196,17 @@ int main()
     int ch;
     while(1)
     {
-        printf("nn---- Singly Linked List(SLL) Menu ----");
-        printf("n1.Insertn2.Displayn3.Deleten4.Countn5.Reversen6.Exitnn");
+        printf("\n\n---- Doubly Linked List(DLL) Menu ----\n");
+        printf("\n1.Insert\n2.Display\n3.Delete\n4.Count\n5.Reverse\n6.Exit\n\n");
         printf("Enter your choice(1-4):");
         scanf("%d",&ch);
 
         switch(ch)
         {
             case 1:
-                    printf("n---- Insert Menu ----");
-                    printf("n1.Insert at beginningn2.Insert at endn3.Insert at specified positionn4.Exit");
-                    printf("nnEnter your choice(1-4):");
+                    printf("\n---- Insert Menu ----");
+                    printf("\n1.Insert at beginning\n2.Insert at end\n3.Insert at specified position\n4.Exit");
+                    printf("\nEnter your choice(1-4):");
                     scanf("%d",&ch);
 
                     switch(ch)
@@ -218,16 +218,16 @@ int main()
                         case 3: insert_pos();
                                 break;
                         case 4: exit(0);
-                        default: printf("Wrong Choice!!");
+                        default: printf("\nWrong Choice!!");
                     }
                     break;
 
             case 2: display();
                     break;
 
-            case 3: printf("n---- Delete Menu ----");
-                    printf("n1.Delete from beginningn2.Delete from endn3.Delete from specified positionn4.Exit");
-                    printf("nnEnter your choice(1-4):");
+            case 3: printf("\n---- Delete Menu ----");
+                    printf("\n1.Delete from beginning\n2.Delete from end\n3.Delete from specified position\n4.Exit");
+                    printf("\nEnter your choice(1-4):");
                     scanf("%d",&ch);
 
                     switch(ch)
@@ -246,11 +246,11 @@ int main()
                     break;
             case 5:reverse(start);
                     break;
-            case 6: exit(0);        
+            case 6: exit(0);
                     default: printf("Wrong Choice!!");
         }
     }
     return 0;
 }
 
-}
+
