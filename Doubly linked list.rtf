@@ -61,69 +61,6 @@ void insert_end(){
     p=start;
     for(int i=0;i<n-2;i++){
         if(p->next==NULL)
-        {#include <stdio.h>
-#include <stdlib.h>
-struct node{
-    struct node*prev;
-    int data;
-    struct node*next;
- }*start=NULL,*p,*q,*t;
-
-void insert_beg(){
-    int no;
-    printf("Enter no");
-    scanf("%d",&no);
-    t=(struct node*)malloc(sizeof(struct node));
-    t->data=no;
-    if(start==NULL){
-        t->next=NULL;
-        t->prev=NULL;
-        start=t;
-    }
-    else{
-        t->next=start;
-        t->prev=NULL;
-        start->prev=t;
-        start=t;
-    }
-}
-void insert_end(){
-    int no;
-    printf("Enter no");
-    scanf("%d",&no);
-    t=(struct node*)malloc(sizeof(struct node));
-    t->data=no;
-    t->next=NULL;
-    if(start==NULL){
-        t->prev=NULL;
-        start=t;
-    }
-    else{
-        p=start;
-        while(p->next!=NULL){
-            p=p->next;
-        }
-        t->prev=p;
-        p->next=t;
-    }
-}
- void insert_pos(){
-    int no=0,n=0,flag=0;
-    if(start==NULL)
-    {
-        printf("List is empty!!");
-       
-    }
-    else{
-    printf("Enter no");
-    scanf("%d",&no);
-    printf("Enter position");
-    scanf("%d",&n);
-    t=(struct node*)malloc(sizeof(struct node));
-    t->data=no;
-    p=start;
-    for(int i=0;i<n-2;i++){
-        if(p->next==NULL)
         {
         printf("There are less elements!!");
         flag=1;
